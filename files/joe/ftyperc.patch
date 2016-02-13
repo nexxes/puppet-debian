@@ -1,0 +1,155 @@
+diff -u orig/ftyperc changed/ftyperc
+--- orig/ftyperc	2014-06-23 18:39:19.000000000 +0200
++++ changed/ftyperc	2016-02-13 00:45:20.536000000 +0100
+@@ -2,7 +2,7 @@
+ 
+  No '.' in file name?  Assume it's a text file and we want wordwrap on.
+ *
+--wordwrap
++--wordwrap
+ 
+  File name with '.'?  It's probably not a text file.
+ *.*
+@@ -44,79 +44,79 @@
+ 
+  Troff
+ *.1
+--wordwrap
++--wordwrap
+ -syntax troff
+ 
+ *.1.in
+--wordwrap
++--wordwrap
+ -syntax troff
+ 
+  TeX
+ *.tex
+--wordwrap
++--wordwrap
+ -syntax tex
+ -tex_comment
+ -no_double_quoted
+ 
+ *.sty
+--wordwrap
++--wordwrap
+ -syntax tex
+ -tex_comment
+ -no_double_quoted
+ 
+  Text file.
+ *.txt
+--wordwrap
++--wordwrap
+ 
+  News/mail files.
+ *.article*
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+ *.followup
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+ *.letter
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+  NN newsreader
+ *tmp/nn.*
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+  mail
+ *tmp/Re*
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+  elm
+ *tmp/snd.*
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+  dmail
+ *tmp/dmt*
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+  pine
+ *tmp/pico.*
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+  Assembly language
+ *.asm
+--wordwrap
++--wordwrap
+ -syntax asm
+ 
+ *.s
+--wordwrap
++--wordwrap
+ -syntax asm
+ 
+ *.S
+--wordwrap
++--wordwrap
+ -syntax asm
+ 
+  Mason
+@@ -433,24 +433,24 @@
+ 
+  XML
+ *.xml
+--wordwrap
++--wordwrap
+ -autoindent
+ -syntax xml
+ 
+  XML
+ *.xsd
+--wordwrap
++--wordwrap
+ -autoindent
+ -syntax xml
+ 
+  HTML
+ *.htm
+--wordwrap
++--wordwrap
+ -autoindent
+ -syntax html
+ 
+ *.html
+--wordwrap
++--wordwrap
+ -autoindent
+ -syntax html
+ 
+@@ -702,7 +702,7 @@
+ 
+  Matlab file
+ *.m
+--wordwrap
++--wordwrap
+ -syntax matlab
+ 
+  Automake file
+@@ -712,7 +712,7 @@
+ 
+  Mail file
+ *tmp/mutt-*
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+  System RC file
