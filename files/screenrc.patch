@@ -1,0 +1,30 @@
+diff -u orig/screenrc changed/screenrc
+--- orig/screenrc	2014-07-26 14:01:31.000000000 +0200
++++ changed/screenrc	2016-02-13 01:57:16.356000000 +0100
+@@ -20,7 +20,7 @@
+ # SCREEN SETTINGS
+ # ------------------------------------------------------------------------------
+ 
+-#startup_message off
++startup_message off
+ #nethack on
+ 
+ #defflow on # will force screen to process ^S/^Q
+@@ -32,7 +32,7 @@
+ vbell_msg "   Wuff  ----  Wuff!!  "
+ 
+ # define a bigger scrollback, default is 100 lines
+-defscrollback 1024
++defscrollback 25000
+ 
+ # ------------------------------------------------------------------------------
+ # SCREEN KEYBINDINGS
+@@ -86,7 +86,7 @@
+ # following termcapinfo line which tells xterm to use the normal screen buffer
+ # (which has scrollback), not the alternate screen buffer.
+ #
+-#termcapinfo xterm|xterms|xs|rxvt ti@:te@
++termcapinfo xterm|xterms|xs|rxvt ti@:te@
+ 
+ # Enable non-blocking mode to better cope with flaky ssh connections.
+ defnonblock 5

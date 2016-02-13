@@ -4,10 +4,18 @@ class nexxes_debian {
 	}
 	
 	package { 'joe':
-		ensure => 'installed',
+		ensure => 'latest',
 	}
 	
 	patch::file { '/etc/joe/ftyperc':
 		diff_source => 'puppet:///modules/nexxes_debian/joe/ftyperc.patch',
+	}
+	
+	package { 'screen':
+		ensure => 'latest',
+	}
+	
+	patch::file { '/etc/screenrc':
+		diff_source => 'puppet:///modules/nexxes_debian/screenrc.patch',
 	}
 }
