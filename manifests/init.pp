@@ -1,6 +1,6 @@
 class nexxes_debian {
 	patch::file { '/etc/inputrc':
-		diff_source => 'puppet:///modules/nexxes_debian/inputrc.patch',
+		diff_source => "puppet:///modules/${module_name}/inputrc.patch",
 	}
 	
 	# Joe
@@ -9,7 +9,7 @@ class nexxes_debian {
 	}
 	
 	patch::file { '/etc/joe/ftyperc':
-		diff_source => 'puppet:///modules/nexxes_debian/joe/ftyperc.patch',
+		diff_source => "puppet:///modules/${module_name}/joe/ftyperc.patch",
 	}
 	
 	# Screen
@@ -18,7 +18,7 @@ class nexxes_debian {
 	}
 	
 	patch::file { '/etc/screenrc':
-		diff_source => 'puppet:///modules/nexxes_debian/screenrc.patch',
+		diff_source => "puppet:///modules/${module_name}/screenrc.patch",
 	}
 	
 	# Bash
@@ -27,21 +27,21 @@ class nexxes_debian {
 	}
 	
 	patch::file { '/etc/bash.bashrc':
-		diff_source => 'puppet:///modules/nexxes_debian/bash.bashrc.patch',
+		diff_source => "puppet:///modules/${module_name}/bash.bashrc.patch",
 	}
 	
 	file { '/etc/profile.d/aliases.bash':
 		ensure => 'present',
-		source => 'puppet:///modules/nexxes_debian/profile.d/aliases.bash',
+		source => "puppet:///modules/${module_name}/profile.d/aliases.bash",
 	}
 	
 	file { '/etc/profile.d/history.bash':
 		ensure => 'present',
-		source => 'puppet:///modules/nexxes_debian/profile.d/history.bash',
+		source => "puppet:///modules/${module_name}/profile.d/history.bash",
 	}
 	
 	file { '/etc/profile.d/prompt.bash':
 		ensure => 'present',
-		source => 'puppet:///modules/nexxes_debian/profile.d/prompt.bash',
+		source => "puppet:///modules/${module_name}/profile.d/prompt.bash",
 	}
 }
