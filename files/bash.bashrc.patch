@@ -1,0 +1,17 @@
+diff -u orig/bash.bashrc changed/bash.bashrc
+--- orig/bash.bashrc	2014-11-13 00:08:49.000000000 +0100
++++ changed/bash.bashrc	2016-02-13 02:21:52.264000000 +0100
+@@ -53,3 +53,13 @@
+ 		fi
+ 	}
+ fi
++
++# Execute additional bash commands
++if [ -d "/etc/profile.d" ]; then
++	for file in /etc/profile.d/*.bash; do
++		if [ -r "$file" ]; then
++			. "$file"
++		fi
++	done
++	unset file
++fi
