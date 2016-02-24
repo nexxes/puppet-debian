@@ -1,4 +1,9 @@
 class nexxes_debian {
+	file { '/etc/apt/sources.list':
+		ensure => 'present',
+		source => "puppet:///modules/${module_name}/apt/sources.list",
+	}
+	
 	patch::file { '/etc/inputrc':
 		diff_source => "puppet:///modules/${module_name}/inputrc.patch",
 	}
