@@ -1,0 +1,38 @@
+--- orig/ssh_config	2016-02-25 22:13:55.380000000 +0100
++++ changed/ssh_config	2016-02-25 22:34:12.128000000 +0100
+@@ -17,7 +17,7 @@
+ # ssh_config(5) man page.
+ 
+ Host *
+-#   ForwardAgent no
++    ForwardAgent yes
+ #   ForwardX11 no
+ #   ForwardX11Trusted yes
+ #   RhostsRSAAuthentication no
+@@ -37,7 +37,7 @@
+ #   IdentityFile ~/.ssh/id_rsa
+ #   IdentityFile ~/.ssh/id_dsa
+ #   Port 22
+-#   Protocol 2,1
++    Protocol 2
+ #   Cipher 3des
+ #   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-cbc,3des-cbc
+ #   MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160
+@@ -49,6 +49,16 @@
+ #   ProxyCommand ssh -q -W %h:%p gateway.example.com
+ #   RekeyLimit 1G 1h
+     SendEnv LANG LC_*
+-    HashKnownHosts yes
++    HashKnownHosts no
+     GSSAPIAuthentication yes
+     GSSAPIDelegateCredentials no
++    ServerAliveCountMax 5
++    ServerAliveInterval 5
++
++    # Host keys the client accepts - order here is honored by OpenSSH
++    # see: https://wiki.mozilla.org/Security/Guidelines/OpenSSH
++    HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256
++    
++    KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp256,ecdh-sha2-nistp384,diffie-hellman-group-exchange-sha256
++    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
++    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr

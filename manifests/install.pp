@@ -14,4 +14,8 @@ class makedebianusable::install {
 	package { 'bash-completion':
 		ensure => 'latest',
 	}
+	
+	package { 'openssh-server':
+		ensure => 'latest',
+	}
 }

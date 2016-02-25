@@ -32,4 +32,13 @@ class makedebianusable::configure {
 		ensure => 'present',
 		source => "puppet:///modules/${module_name}/profile.d/prompt.bash",
 	}
+	
+	# SSH
+	patch::file { '/etc/ssh/ssh_config':
+		diff_source => "puppet:///modules/${module_name}/ssh/ssh_config.patch",
+	}
+	
+	patch::file { '/etc/ssh/sshd_config':
+		diff_source => "puppet:///modules/${module_name}/ssh/sshd_config.patch",
+	}
 }

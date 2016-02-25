@@ -1,0 +1,32 @@
+--- orig/sshd_config	2016-02-25 22:24:54.564000000 +0100
++++ changed/sshd_config	2016-02-25 22:30:23.020000000 +0100
+@@ -8,16 +8,23 @@
+ #ListenAddress 0.0.0.0
+ Protocol 2
+ # HostKeys for protocol version 2
++HostKey /etc/ssh/ssh_host_ed25519_key
+ HostKey /etc/ssh/ssh_host_rsa_key
+-HostKey /etc/ssh/ssh_host_dsa_key
+ HostKey /etc/ssh/ssh_host_ecdsa_key
+-HostKey /etc/ssh/ssh_host_ed25519_key
+-#Privilege Separation is turned on for security
+-UsePrivilegeSeparation yes
++HostKey /etc/ssh/ssh_host_dsa_key
++
++# See: https://wiki.mozilla.org/Security/Guidelines/OpenSSH
++KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256
++Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
++MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
++
++# Use kernel sandbox mechanisms where possible in unprivilegied processes
++# Systrace on OpenBSD, Seccomp on Linux, seatbelt on MacOSX/Darwin, rlimit elsewhere.
++UsePrivilegeSeparation sandbox
+ 
+ # Lifetime and size of ephemeral version 1 server key
+-KeyRegenerationInterval 3600
+-ServerKeyBits 1024
++#KeyRegenerationInterval 3600
++#ServerKeyBits 1024
+ 
+ # Logging
+ SyslogFacility AUTH
