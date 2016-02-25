@@ -1,0 +1,19 @@
+{
+	"name": "nexxes-makedebianusable",
+	"version": "0.1",
+	"author": "Dennis Birkholz",
+	"license": "GPL-3.0",
+	"summary": "Makes a plain debian install usable.",
+	"source": "https://github.com/nexxes/puppet-debian",
+	"tags": ["debian"],
+	"operatingsystem_support": [
+		{
+			"operatingsystem":"Debian",
+			"operatingsystemrelease":[ "8.0" ]
+		}
+	],
+	"dependencies": [
+		{ "name": "tohuwabohu-patch", "version_requirement": ">= 1.2.1" },
+		{ "name": "puppetlabs-apt", "version_requirement": ">= 2.2.1" }
+	]
+}

@@ -1,4 +1,4 @@
-class nexxes_debian {
+class makedebianusable {
 	file { '/etc/apt/sources.list':
 		ensure => 'present',
 		source => "puppet:///modules/${module_name}/apt/sources.list",
