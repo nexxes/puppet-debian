@@ -14,6 +14,6 @@
 	],
 	"dependencies": [
 		{ "name": "tohuwabohu-patch", "version_requirement": ">= 1.2.1" },
-		{ "name": "puppetlabs-apt", "version_requirement": ">= 2.2.1" }
+		{ "name": "puppetlabs-apt", "version_requirement": "= 1.8.0" }
 	]
 }
