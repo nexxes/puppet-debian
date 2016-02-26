@@ -24,8 +24,8 @@ class makedebianusable::install {
 	}
 	
 	service { 'ssh':
-		ensure => 'running',
-		enables => true,
+		ensure  => 'running',
+		enable  => true,
 		require => Package['openssh-server'],
 	}
 }

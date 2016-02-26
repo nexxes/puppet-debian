@@ -1,0 +1,29 @@
+diff -u orig/ssh_config changed/ssh_config
+--- orig/ssh_config	2016-02-26 18:10:31.768285090 +0100
++++ changed/ssh_config	2016-02-26 18:14:31.100310498 +0100
+@@ -17,7 +17,7 @@
+ # ssh_config(5) man page.
+ 
+ Host *
+-#   ForwardAgent no
++    ForwardAgent yes
+ #   ForwardX11 no
+ #   ForwardX11Trusted yes
+ #   RhostsRSAAuthentication no
+@@ -37,7 +37,7 @@
+ #   IdentityFile ~/.ssh/id_rsa
+ #   IdentityFile ~/.ssh/id_dsa
+ #   Port 22
+-#   Protocol 2,1
++    Protocol 2
+ #   Cipher 3des
+ #   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-cbc,3des-cbc
+ #   MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160
+@@ -48,6 +48,6 @@
+ #   VisualHostKey no
+ #   ProxyCommand ssh -q -W %h:%p gateway.example.com
+     SendEnv LANG LC_*
+-    HashKnownHosts yes
++    HashKnownHosts no
+     GSSAPIAuthentication yes
+     GSSAPIDelegateCredentials no
