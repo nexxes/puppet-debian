@@ -36,9 +36,11 @@ class makedebianusable::configure {
 	# SSH
 	patch::file { '/etc/ssh/ssh_config':
 		diff_source => "puppet://$server/files/${module_name}/ssh/ssh_config.patch",
+		notify      => Service["ssh"],
 	}
 	
 	patch::file { '/etc/ssh/sshd_config':
 		diff_source => "puppet://$server/files/${module_name}/ssh/sshd_config.patch",
+		notify      => Service["ssh"],
 	}
 }
