@@ -34,13 +34,15 @@ class makedebianusable::configure {
 	}
 	
 	# SSH
-	patch::file { '/etc/ssh/ssh_config':
-		diff_source => "puppet://$server/files/${module_name}/${lsbdistcodename}/ssh/ssh_config.patch",
-		notify      => Service["ssh"],
+	file { '/etc/ssh/ssh_config':
+		ensure => 'present',
+		source => "puppet://$server/files/${module_name}/${lsbdistcodename}/ssh/ssh_config",
+		notify => Service["ssh"],
 	}
 	
-	patch::file { '/etc/ssh/sshd_config':
-		diff_source => "puppet://$server/files/${module_name}/${lsbdistcodename}/ssh/sshd_config.patch",
-		notify      => Service["ssh"],
+	file { '/etc/ssh/sshd_config':
+		ensure => 'present',
+		source => "puppet://$server/files/${module_name}/${lsbdistcodename}/ssh/sshd_config",
+		notify => Service["ssh"],
 	}
 }
