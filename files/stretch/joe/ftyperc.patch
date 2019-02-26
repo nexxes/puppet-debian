@@ -1,0 +1,92 @@
+--- ../../../reference/stretch/joe/ftyperc	2019-02-25 14:12:54.088586181 +0100
++++ ftyperc	2019-02-25 14:13:44.822509390 +0100
+@@ -12,7 +12,7 @@
+ [not_text]
+  File name with '.'?  It's probably not a text file.
+ *.*
+--wordwrap
++--wordwrap
+ 
+  Diff
+ [diff]
+@@ -32,7 +32,7 @@
+ [troff]
+ *.1
+ *.1.in
+--wordwrap
++--wordwrap
+ -syntax troff
+ 
+  TeX
+@@ -42,7 +42,7 @@
+ -syntax tex
+ -tex_comment
+ -no_double_quoted
+--wordwrap
++--wordwrap
+ 
+  News/mail files.
+ [email]
+@@ -61,7 +61,7 @@
+ *tmp/pico.*
+  Mutt
+ *tmp/mutt-*
+--wordwrap
++--wordwrap
+ -syntax mail
+ 
+  AVR assembly language
+@@ -70,7 +70,7 @@
+ *.inc
+ -syntax avr
+ -autoindent
+--wordwrap
++--wordwrap
+ -tab 8
+ 
+  Generic assembly language
+@@ -78,7 +78,7 @@
+ *.asm
+ *.s
+ *.S
+--wordwrap
++--wordwrap
+ -syntax asm
+ 
+  Mason (Perl in HTML)
+@@ -323,7 +323,7 @@
+ [html]
+ *.htm
+ *.html
+--wordwrap
++--wordwrap
+ -autoindent
+ -smarthome
+ -smartbacks
+@@ -332,7 +332,7 @@
+  CSS
+ [css]
+ *.css
+--wordwrap
++--wordwrap
+ -autoindent
+ -smarthome
+ -smartbacks
+@@ -564,7 +564,7 @@
+  Matlab file (clashes with objective-C)
+ [matlab]
+ *.m
+--wordwrap
++--wordwrap
+ -syntax matlab
+ 
+  UNIX configuration file
+@@ -609,7 +609,7 @@
+ [markdown]
+ *.md
+ -syntax md
+--wordwrap
++--wordwrap
+ 
+  YAML
+ [yaml]

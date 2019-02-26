@@ -1,0 +1,11 @@
+--- ../../../reference/stretch/ssh/sshd_config	2019-02-25 13:51:59.223729483 +0100
++++ sshd_config	2019-02-25 14:03:19.826661219 +0100
+@@ -121,3 +121,8 @@
+ #	AllowTcpForwarding no
+ #	PermitTTY no
+ #	ForceCommand cvs server
++
++# See: https://wiki.mozilla.org/Security/Guidelines/OpenSSH
++KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256
++Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
++MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com

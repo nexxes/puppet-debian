@@ -5,12 +5,18 @@ class makedebianusable::configure {
 	
 	# Joe
 	patch::file { '/etc/joe/ftyperc':
-		diff_source => "puppet:///modules/${module_name}/${lsbdistcodename}/joe/ftyperc.patch",
+		diff_source => [
+			"puppet:///modules/${module_name}/${lsbdistcodename}/joe/ftyperc.patch",
+			"puppet:///modules/${module_name}/joe/ftyperc.patch",
+		],
 	}
 	
 	# Screen
 	patch::file { '/etc/screenrc':
-		diff_source => "puppet:///modules/${module_name}/screenrc.patch",
+		diff_source => [
+			"puppet:///modules/${module_name}/${lsbdistcodename}/screenrc.patch",
+			"puppet:///modules/${module_name}/screenrc.patch",
+		],
 	}
 	
 	# Bash
