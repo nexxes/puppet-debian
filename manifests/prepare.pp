@@ -1,7 +1,11 @@
 class makedebianusable::prepare {
-	class { 'apt':
-		purge_sources_list   => true,
-		apt_update_frequency => 'daily',
+	class { "apt":
+		purge  => {
+			"sources.list" => true,
+		},
+		update => {
+			frequency => 'daily',
+		},
 	}
 	
 	apt::source { 'debian_50_main':
@@ -9,8 +13,10 @@ class makedebianusable::prepare {
 		location => 'http://ftp.de.debian.org/debian/',
 		release  => "${lsbdistcodename}",
 		repos    => 'main non-free contrib',
-		include_src => true,
-		include_deb => true,
+		include  => {
+			src  => true,
+			deb  => true,
+		},
 	}
 	
 	apt::source { 'debian_51_main_mirror':
@@ -18,8 +24,10 @@ class makedebianusable::prepare {
 		location => 'http://ftp2.de.debian.org/debian/',
 		release  => "${lsbdistcodename}",
 		repos    => 'main non-free contrib',
-		include_src => true,
-		include_deb => true,
+		include  => {
+			src  => true,
+			deb  => true,
+		},
 	}
 	
 	apt::source { 'debian_60_security_mirror':
@@ -27,8 +35,10 @@ class makedebianusable::prepare {
 		location => 'http://ftp.hosteurope.de/mirror/ftp.debian.org/debian-security/',
 		release  => "${lsbdistcodename}/updates",
 		repos    => 'main contrib non-free',
-		include_src => true,
-		include_deb => true,
+		include  => {
+			src  => true,
+			deb  => true,
+		},
 	}
 	
 	apt::source { 'debian_61_security':
@@ -36,8 +46,10 @@ class makedebianusable::prepare {
 		location => 'http://security.debian.org/',
 		release  => "${lsbdistcodename}/updates",
 		repos    => 'main contrib non-free',
-		include_src => true,
-		include_deb => true,
+		include  => {
+			src  => true,
+			deb  => true,
+		},
 	}
 	
 	apt::source { 'debian_70_updates':
@@ -45,8 +57,10 @@ class makedebianusable::prepare {
 		location => 'http://ftp.de.debian.org/debian/',
 		release  => "${lsbdistcodename}-updates",
 		repos    => 'main contrib non-free',
-		include_src => true,
-		include_deb => true,
+		include  => {
+			src  => true,
+			deb  => true,
+		},
 	}
 	
 	apt::source { 'debian_71_updates_mirror':
@@ -54,8 +68,10 @@ class makedebianusable::prepare {
 		location => 'http://ftp2.de.debian.org/debian/',
 		release  => "${lsbdistcodename}-updates",
 		repos    => 'main contrib non-free',
-		include_src => true,
-		include_deb => true,
+		include  => {
+			src  => true,
+			deb  => true,
+		},
 	}
 	
 	apt::source { 'debian_90_backports':
@@ -63,7 +79,9 @@ class makedebianusable::prepare {
 		location => 'http://ftp2.de.debian.org/debian/',
 		release  => "${lsbdistcodename}-backports",
 		repos    => 'main',
-		include_src => true,
-		include_deb => true,
+		include  => {
+			src  => true,
+			deb  => true,
+		},
 	}
 }
