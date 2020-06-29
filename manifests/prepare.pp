@@ -8,6 +8,50 @@ class makedebianusable::prepare {
 		},
 	}
 	
+	apt::source { 'debian_40_main':
+		comment  => 'Main repository, CDN rotation',
+		location => 'http://deb.debian.org/debian/',
+		release  => "${lsbdistcodename}",
+		repos    => 'main non-free contrib',
+		include  => {
+			src  => true,
+			deb  => true,
+		},
+	}
+	
+	apt::source { 'debian_41_main_updates':
+		comment  => 'Main repository, release updates, CDN rotation',
+		location => 'http://deb.debian.org/debian/',
+		release  => "${lsbdistcodename}-updates",
+		repos    => 'main non-free contrib',
+		include  => {
+			src  => true,
+			deb  => true,
+		},
+	}
+	
+	apt::source { 'debian_42_main_updates':
+		comment  => 'Main repository, security updates, CDN rotation',
+		location => 'http://deb.debian.org/debian-security/',
+		release  => "${lsbdistcodename}/updates",
+		repos    => 'main non-free contrib',
+		include  => {
+			src  => true,
+			deb  => true,
+		},
+	}
+	
+	apt::source { 'debian_43_main_updates':
+		comment  => 'Main repository, backports, CDN rotation',
+		location => 'http://deb.debian.org/debian/',
+		release  => "${lsbdistcodename}-backports",
+		repos    => 'main non-free contrib',
+		include  => {
+			src  => true,
+			deb  => true,
+		},
+	}
+	/*
 	apt::source { 'debian_50_main':
 		comment  => 'Main repository, German mirror',
 		location => 'http://ftp.de.debian.org/debian/',
@@ -83,5 +127,5 @@ class makedebianusable::prepare {
 			src  => true,
 			deb  => true,
 		},
-	}
+	}*/
 }
